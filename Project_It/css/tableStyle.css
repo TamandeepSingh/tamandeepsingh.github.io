@@ -1,0 +1,31 @@
+#canvasA, #canvasC, #canvasB,#canvasD{
+	border-top: 1px solid #D1D1D1;
+	border-left: 1px solid #D1D1D1;
+	border-top-left-radius: 20px ;
+}
+
+#sell1, #sell2, #sell3, #sell4, #sell5, #sell6{
+	margin-bottom: 4px;
+	width: 175px;
+	border-radius: 2px;
+    background-color: #f1f1f1;
+}
+
+.btn{
+	background-color: #D1D1D1;
+	border-radius: 2px;
+	border: #D1D1D1 solid 1px;
+	width: 85px;
+}
+
+#adjustBtn{
+	margin-left: 2px;
+}
+
+.btn:hover{
+	background-color: #f1f1f1;
+}
+
+span{
+	font-family: Verdana, sans-serif;
+}
