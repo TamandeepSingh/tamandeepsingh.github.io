@@ -138,6 +138,49 @@ app.controller("mycontroller", function($scope){
     	dr.fillStyle="#D1D1D1";
     	dr.fillRect(x+hc+length+hc,y+depth,2*hc,2*hc);
 
+         // Dimensioning  //
+        $scope.dimensionL = function(dr){
+            dr.beginPath();
+            dr.moveTo(x+2*hc+3, y+depth+8);
+            dr.lineTo(x+2*hc+length-4, y+depth+8);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.beginPath();
+            dr.moveTo(x+2*hc+3,y+depth+2);
+            dr.lineTo(x+2*hc+3,y+depth+14);
+            dr.lineWidth= 2;
+            dr.stroke();
+            dr.beginPath();
+            dr.moveTo(x+2*hc+length-4,y+depth+2);
+            dr.lineTo(x+2*hc+length-4,y+depth+14);
+            dr.lineWidth= 2;
+            dr.stroke();
+            dr.font = '20pt Calibri';
+            dr.fillStyle = 'black';
+            dr.fillText("L",x+2*hc+length/2,y+depth+50);
+        }
+
+        $scope.dimensionD = function(dr){
+            dr.beginPath();
+            dr.moveTo(x+hc-8,y+2);
+            dr.lineTo(x+hc-8,y+depth-3);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.beginPath();
+            dr.moveTo(x+hc-14,y+2);
+            dr.lineTo(x+hc-2,y+2);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.beginPath();
+            dr.moveTo(x+hc-14,y+depth-3);
+            dr.lineTo(x+hc-2,y+depth-3);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.font = '20pt Calibri';
+            dr.fillStyle = 'black';
+            dr.fillText("D",x+hc-35,y+depth/2);
+        }
+
     	// making of anchor bar //
     	$scope.makeAnchor = function(dr){
     		dr.beginPath();
@@ -166,6 +209,9 @@ app.controller("mycontroller", function($scope){
 	    		i=i+spacing;
 	    	} 
 		}
+        // calling functions //
+        $scope.dimensionL(dr);
+        $scope.dimensionD(dr);
     	$scope.makeAnchor(dr);
     	$scope.makeMain(dr);
     	$scope.makeStirup(dr);
@@ -173,7 +219,7 @@ app.controller("mycontroller", function($scope){
 
     // making of the internal views //
     $scope.internalViews = function(a){
-    	var y=10 , clr=25 ;
+    	var y=20 , clr=25 ;
     	var width = parseInt(document.getElementById("widSel").value);
     	var depth = parseInt(document.getElementById("depSel").value);
     	var mS = document.getElementById("mainSel");
@@ -187,7 +233,7 @@ app.controller("mycontroller", function($scope){
     	var radiusMain = diaMain/2;
     	var canvasDeep=400 ;
     	var z = 35;
-        var scale= canvasDeep/depth;
+        var scale= canvasDeep/(depth+50);
         if(scale<=1){
             clr=clr*scale;
             width=width*scale;
@@ -205,6 +251,48 @@ app.controller("mycontroller", function($scope){
     	// making of concerete //
     	dr.fillStyle = "#D1D1D1";
     	dr.fillRect(x,y,width,depth);
+
+        // Dimensioning //
+        $scope.dimensionD = function(dr){
+            dr.beginPath();
+            dr.moveTo(x-8,y+2);
+            dr.lineTo(x-8,y+depth-2);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.beginPath();
+            dr.moveTo(x-14,y+2);
+            dr.lineTo(x-2,y+2);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.beginPath();
+            dr.moveTo(x-14,y+depth-2);
+            dr.lineTo(x-2,y+depth-2);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.font = '20pt Calibri';
+            dr.fillStyle = 'black';
+            dr.fillText("D",x-35,y+depth/2);
+        }
+        $scope.dimensionW = function(){
+            dr.beginPath();
+            dr.moveTo(x,y+depth+8);
+            dr.lineTo(x+width,y+depth+8);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.beginPath();
+            dr.moveTo(x,y+depth+2);
+            dr.lineTo(x,y+depth+14);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.beginPath();
+            dr.moveTo(x+width,y+depth+2);
+            dr.lineTo(x+width,y+depth+14);
+            dr.lineWidth = 2;
+            dr.stroke();
+            dr.font = '20pt Calibri';
+            dr.fillStyle = 'black';
+            dr.fillText("W",x+width/2,y+depth+40);
+        }
 
     	// making of stirups //
     	$scope.makingStirupsRect = function(dr){
@@ -273,10 +361,12 @@ app.controller("mycontroller", function($scope){
             dr.lineCap = "round";
             dr.stroke();
     	}
-    
+        // calling functions //
+        $scope.dimensionW(dr);
     	$scope.makingStirupsRect(dr);
     	$scope.makingAnchBar(dr);
     	$scope.makingMainBar(dr);
+        $scope.dimensionD(dr);
 
     }
 
@@ -328,13 +418,13 @@ app.controller("mycontroller", function($scope){
             var imgdata = pdfcans.toDataURL('image/png');
             doc.text(20,20,'Internal View of Beam');
             doc.addImage(imgdata,'PNG',10,40,180,100);
-            doc.text(20,120,"Specifications - ");
-            doc.text(20,130,"D = Depth of the Beam = "+depth+" mm");
-            doc.text(20,140,"L = Length of the Beam = "+length+" mm");
-            doc.text(20,150,"Diameter of the Main Bar = "+diaMain+" mm");
-            doc.text(20,160,"Diameter of the Anchor Bar = "+diaAnchor+" mm");
-            doc.text(20,170,"Diameter of the Stirrup Bar = "+diaStirup+" mm");
-            doc.text(20,180,"Spacing between Stirrups = "+spacing+" mm");           
+            doc.text(20,140,"Specifications - ");
+            doc.text(20,150,"D = Depth of the Beam = "+depth+" mm");
+            doc.text(20,160,"L = Length of the Beam = "+length+" mm");
+            doc.text(20,170,"Diameter of the Main Bar = "+diaMain+" mm");
+            doc.text(20,180,"Diameter of the Anchor Bar = "+diaAnchor+" mm");
+            doc.text(20,190,"Diameter of the Stirrup Bar = "+diaStirup+" mm");
+            doc.text(20,200,"Spacing between Stirrups = "+spacing+" mm");           
         }
 
         $scope.down("can1","left");
