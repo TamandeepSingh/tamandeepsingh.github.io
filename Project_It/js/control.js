@@ -90,19 +90,6 @@ app.controller("mycontroller", function($scope){
 
 	// including beamcanvas.html //
 	$scope.beamInc = "/templates/beamcanvas.html";
-
-	// main function calling everything for making profections //
-	$scope.drawit = function(){
-        var draw1 = document.getElementById("can1"); 
-        var draw2 = document.getElementById("can2");  
-	    var draw3 = document.getElementById("can3");
-	    var draw4 = document.getElementById("can4");
-	    $scope.makeBeam(draw4);
-	    $scope.internalViews(draw1);
-	    $scope.internalViews(draw2);
-	    $scope.internalViews(draw3);
-		
-    }
  	
  	// function for making beam //
     $scope.makeBeam = function(a){ 	
@@ -387,6 +374,19 @@ app.controller("mycontroller", function($scope){
 	    clearCan4.clearRect(x,y,w,h);
     }
 
+    // main function calling everything for making profections //
+    $scope.drawit = function(){
+        var draw1 = document.getElementById("can1"); 
+        var draw2 = document.getElementById("can2");  
+        var draw3 = document.getElementById("can3");
+        var draw4 = document.getElementById("can4");
+        $scope.makeBeam(draw4);
+        $scope.internalViews(draw1);
+        $scope.internalViews(draw2);
+        $scope.internalViews(draw3);
+        
+    }
+    
     // Download PDF //
     $scope.downloadPdf = function(){
         var doc = new jsPDF('1','mm','a4');
