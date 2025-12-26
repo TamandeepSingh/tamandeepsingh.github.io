@@ -54,6 +54,37 @@ async function loadData() {
         console.error('Error loading blog:', error);
         showBlogPlaceholder();
     }
+    // try {
+    //     const response = await fetch(
+    //         'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@tamandeepsinghkhamba'
+    //     );
+
+    //     if (!response.ok) {
+    //         throw new Error('Failed to fetch Medium feed');
+    //     }
+
+    //     const data = await response.json();
+
+    //     const blogPosts = data.items.map(item => ({
+    //         title: item.title,
+    //         date: item.pubDate,
+    //         excerpt: item.description
+    //             .replace(/<[^>]*>/g, '')   // remove HTML
+    //             .slice(0, 180) + '...',
+    //         link: item.link,
+    //         tags: item.categories || []
+    //     }));
+
+    //     if (blogPosts.length > 0) {
+    //         renderBlog(blogPosts);
+    //     } else {
+    //         showBlogPlaceholder();
+    //     }
+
+    // } catch (error) {
+    //     console.error('Error loading Medium blog:', error);
+    //     showBlogPlaceholder();
+    // }
 }
 
 // Render Skills
@@ -213,6 +244,45 @@ function renderDefaultCertifications() {
 }
 
 // Render Blog
+// function renderBlog(blogPosts) {
+//     const container = document.getElementById('blogContainer');
+//     container.innerHTML = '';
+    
+//     blogPosts.forEach(post => {
+//         const card = document.createElement('div');
+//         card.className = 'blog-card';
+        
+//         const date = document.createElement('div');
+//         date.className = 'blog-date';
+//         date.textContent = formatDate(post.date);
+//         card.appendChild(date);
+        
+//         const title = document.createElement('h3');
+//         title.textContent = post.title;
+//         card.appendChild(title);
+        
+//         const excerpt = document.createElement('p');
+//         excerpt.textContent = post.excerpt;
+//         card.appendChild(excerpt);
+        
+//         if (post.tags && post.tags.length > 0) {
+//             const tagsDiv = document.createElement('div');
+//             tagsDiv.className = 'blog-tags';
+            
+//             post.tags.forEach(tag => {
+//                 const tagSpan = document.createElement('span');
+//                 tagSpan.className = 'blog-tag';
+//                 tagSpan.textContent = tag;
+//                 tagsDiv.appendChild(tagSpan);
+//             });
+            
+//             card.appendChild(tagsDiv);
+//         }
+        
+//         container.appendChild(card);
+//     });
+// }
+
 function renderBlog(blogPosts) {
     const container = document.getElementById('blogContainer');
     container.innerHTML = '';
@@ -233,6 +303,7 @@ function renderBlog(blogPosts) {
         const excerpt = document.createElement('p');
         excerpt.textContent = post.excerpt;
         card.appendChild(excerpt);
+
         
         if (post.tags && post.tags.length > 0) {
             const tagsDiv = document.createElement('div');
@@ -247,7 +318,15 @@ function renderBlog(blogPosts) {
             
             card.appendChild(tagsDiv);
         }
-        
+
+        const readMore = document.createElement('a');
+        readMore.href = post.link;
+        readMore.target = '_blank';
+        readMore.textContent = 'Read on Medium →';
+        readMore.className = 'blog-read-more';
+
+        card.appendChild(readMore);
+
         container.appendChild(card);
     });
 }

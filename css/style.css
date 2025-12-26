@@ -683,3 +683,15 @@ html {
         display: none;
     }
 }
+
+.blog-read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1a8917;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.blog-read-more:hover {
+    text-decoration: underline;
+}
