@@ -288,34 +288,41 @@ function renderBlog(blogPosts) {
     container.innerHTML = '';
     
     blogPosts.forEach(post => {
+
+        // 🔹 Wrapper link (whole card clickable)
+        const cardLink = document.createElement('a');
+        cardLink.href = post.link;
+        cardLink.target = '_blank';
+        cardLink.rel = 'noopener noreferrer';
+        cardLink.className = 'blog-card-link';
+
         const card = document.createElement('div');
         card.className = 'blog-card';
-        
+
         const date = document.createElement('div');
         date.className = 'blog-date';
         date.textContent = formatDate(post.date);
         card.appendChild(date);
-        
+
         const title = document.createElement('h3');
         title.textContent = post.title;
         card.appendChild(title);
-        
+
         const excerpt = document.createElement('p');
         excerpt.textContent = post.excerpt;
         card.appendChild(excerpt);
 
-        
         if (post.tags && post.tags.length > 0) {
             const tagsDiv = document.createElement('div');
             tagsDiv.className = 'blog-tags';
-            
+
             post.tags.forEach(tag => {
                 const tagSpan = document.createElement('span');
                 tagSpan.className = 'blog-tag';
                 tagSpan.textContent = tag;
                 tagsDiv.appendChild(tagSpan);
             });
-            
+
             card.appendChild(tagsDiv);
         }
 
@@ -324,10 +331,10 @@ function renderBlog(blogPosts) {
         readMore.target = '_blank';
         readMore.textContent = 'Read on Medium →';
         readMore.className = 'blog-read-more';
-
         card.appendChild(readMore);
 
-        container.appendChild(card);
+        cardLink.appendChild(card);
+        container.appendChild(cardLink);
     });
 }
 
