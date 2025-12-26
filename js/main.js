@@ -227,9 +227,33 @@ function renderCertifications(certifications) {
         const provider = document.createElement('p');
         provider.textContent = cert.provider;
         info.appendChild(provider);
-        
+
+        // Move "Verify on Credly" inside info
+        if (cert.link) {
+            
+            const readMore = document.createElement('a');
+            readMore.href = cert.link;
+            readMore.target = '_blank';
+            readMore.rel = 'noopener noreferrer';
+            readMore.textContent = 'Verify on Credly →';
+            readMore.className = 'cert-read-more';
+            info.appendChild(readMore);
+        }
+
         card.appendChild(info);
-        container.appendChild(card);
+
+        if (cert.link) {
+            const cardLink = document.createElement('a');
+            cardLink.href = cert.link;
+            cardLink.target = '_blank';
+            cardLink.rel = 'noopener noreferrer';
+            cardLink.className = 'cert-card-link';
+            
+            cardLink.appendChild(card);
+            container.appendChild(cardLink);
+        } else {
+            container.appendChild(card);
+        }
     });
 }
 

@@ -461,12 +461,21 @@ section {
     transform: translateY(-3px);
 }
 
-.cert-badge {
+/* .cert-badge {
     width: 60px;
     height: 60px;
     object-fit: contain;
     flex-shrink: 0;
+} */
+
+.cert-badge {
+    width: 25vw;      /* 25% of viewport width */
+    max-width: 150px; /* never exceed 150px */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
 }
+
 
 .cert-icon {
     font-size: 2.5rem;
@@ -710,4 +719,64 @@ html {
 .blog-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.cert-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cert-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+
+.cert-read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1a8917;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cert-read-more:hover {
+    text-decoration: underline;
+}
+
+.cert-card {
+    display: flex;
+    flex-direction: column; /* stack badge/icon + info vertically */
+    align-items: center;    /* center horizontally */
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.cert-info {
+    text-align: center; /* center the text and link */
+}
+
+.cert-read-more {
+    display: inline-block;
+    margin-top: 8px;
+    color: #1a8917;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cert-read-more:hover {
+    text-decoration: underline;
 }
