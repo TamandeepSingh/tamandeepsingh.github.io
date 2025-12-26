@@ -1,0 +1,38 @@
+{
+  "Cloud & Infrastructure": [
+    "AWS",
+    "GCP",
+    "Terraform",
+    "Kubernetes",
+    "Docker",
+    "Ansible"
+  ],
+  "CI/CD & GitOps": [
+    "GitHub Actions",
+    "GitLab CI/CD",
+    "Jenkins",
+    "ArgoCD"
+  ],
+  "Observability": [
+    "Elasticsearch",
+    "Logstash",
+    "Kibana",
+    "Fluent Bit",
+    "Grafana",
+    "Prometheus"
+  ],
+  "Security": [
+    "IAM",
+    "VPC",
+    "Cloud NGFW",
+    "Cloud Armor",
+    "Wazuh SIEM",
+    "Firewalls"
+  ],
+  "Programming": [
+    "Python",
+    "Bash",
+    "JavaScript",
+    "PHP"
+  ]
+}

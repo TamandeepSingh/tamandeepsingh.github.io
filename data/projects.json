@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Multi-Cloud Infrastructure Automation",
+    "description": "Terraform-based infrastructure as code solution for managing AWS and GCP resources with automated deployments, state management, and drift detection. Achieved 15% cost reduction through optimized resource provisioning.",
+    "technologies": [
+      "Terraform",
+      "AWS",
+      "GCP",
+      "GitHub Actions",
+      "Python"
+    ],
+    "link": "https://github.com/TamandeepSingh"
+  },
+  {
+    "title": "Kubernetes Security Platform",
+    "description": "Comprehensive security implementation for production Kubernetes clusters including RBAC policies, network policies, pod security standards, and automated compliance scanning across EKS and GKE.",
+    "technologies": [
+      "Kubernetes",
+      "Helm",
+      "Falco",
+      "Trivy",
+      "OPA"
+    ],
+    "link": "https://github.com/TamandeepSingh"
+  },
+  {
+    "title": "Centralized Logging Pipeline",
+    "description": "ELK stack implementation with custom log filtering, PII masking, and real-time alerting. Reduced log storage costs by 60% while maintaining security visibility across multiple cloud environments.",
+    "technologies": [
+      "Elasticsearch",
+      "Logstash",
+      "Kibana",
+      "Fluent Bit",
+      "Python"
+    ],
+    "link": "https://github.com/TamandeepSingh"
+  },
+  {
+    "title": "Wazuh SIEM Deployment",
+    "description": "High-availability Wazuh SIEM stack integrating logs from Google Cloud, Cloudflare, and CrowdStrike. Implemented custom alerting rules, FIM, and incident response workflows for centralized security monitoring.",
+    "technologies": [
+      "Wazuh",
+      "Elasticsearch",
+      "Docker",
+      "GCP",
+      "Terraform"
+    ],
+    "link": "https://github.com/TamandeepSingh"
+  },
+  {
+    "title": "GitOps CI/CD Pipeline",
+    "description": "Automated deployment pipeline using GitHub Actions and ArgoCD for continuous delivery to Kubernetes clusters. Implements automated testing, security scanning, and progressive rollout strategies.",
+    "technologies": [
+      "GitHub Actions",
+      "ArgoCD",
+      "Kubernetes",
+      "Helm",
+      "Docker"
+    ],
+    "link": "https://github.com/TamandeepSingh"
+  },
+  {
+    "title": "Cloud NGFW Implementation",
+    "description": "End-to-end deployment of Google Cloud Next Generation Firewall including firewall endpoints, security profiles, Layer 7 inspection, and threat prevention policies for enterprise-grade network security.",
+    "technologies": [
+      "GCP",
+      "Cloud NGFW",
+      "Terraform",
+      "VPC",
+      "Security"
+    ],
+    "link": "https://github.com/TamandeepSingh"
+  }
+]

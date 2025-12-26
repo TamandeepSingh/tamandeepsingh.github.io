@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Google Cloud Professional Cloud Architect",
+    "provider": "Google Cloud",
+    "badge": "https://images.credly.com/size/340x340/images/71c579e0-51fd-4247-b493-d2fa8167157a/image.png",
+    "icon": "☁️"
+  },
+  {
+    "name": "Google Cloud Associate Cloud Engineer",
+    "provider": "Google Cloud",
+    "badge": "https://images.credly.com/size/340x340/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/image.png",
+    "icon": "☁️"
+  },
+  {
+    "name": "HashiCorp Certified: Terraform Associate",
+    "provider": "HashiCorp",
+    "badge": "https://images.credly.com/size/340x340/images/0dc62494-dc94-469a-83af-e35309f27356/blob",
+    "icon": "🔧"
+  },
+  {
+    "name": "AWS Certified Cloud Practitioner",
+    "provider": "Amazon Web Services",
+    "badge": "https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
+    "icon": "☁️"
+  },
+  {
+    "name": "Google IT Support Certificate",
+    "provider": "Google",
+    "badge": "https://images.credly.com/size/340x340/images/7faec861-5101-4ff1-a7aa-ba169bc447cf/blob",
+    "icon": "☁️"
+  }
+
+]
